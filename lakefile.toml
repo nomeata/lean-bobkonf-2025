@@ -1,0 +1,7 @@
+name = "leaning-in-2025"
+version = "0.1.0"
+defaultTargets = ["LeaningIn2025"]
+
+[[lean_lib]]
+name = "LeaningIn2025"
+globs = "LeaningIn2025.+"
