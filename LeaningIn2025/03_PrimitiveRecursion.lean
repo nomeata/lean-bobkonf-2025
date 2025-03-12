@@ -13,38 +13,44 @@ primitively recursive definitions.
 -- Natural numbers are an inductive definition:
 
 namespace JustToRecall
+
 inductive Nat where
   | zero : Nat
   | succ (n : Nat) : Nat
+
 end JustToRecall
 
--- And here is their recursor
-/-
-info: recursor Nat.rec.{u} :
-  {motive : Nat → Sort u} →
-  (zero : motive Nat.zero) →
-  (succ : (n : Nat) → motive n → motive n.succ) →
-  (t : Nat) → motive t
+-- And this is the recursor for natural numbers:
+
+/--
+info: Nat.rec.{u}
+  {motive : Nat → Sort u}
+  (zero : motive Nat.zero)
+  (succ : (n : Nat) → motive n → motive n.succ)
+  (t : Nat) : motive t
 -/
+#guard_msgs (whitespace := lax) in
+#check Nat.rec
 -- #print Nat.rec
 
 /-
 Addition on Nat, the usual way:
 
 ```
-def add (a b : Nat) : Nat := match a with
+def add (a b : Nat) : Nat :=
+  match a with
   | .zero => b
   | .succ a' => Nat.succ (add a' b)
 ```
 
-Using the recursor, we can define it without recurion:
+Using the recursor, we can define it without recursion:
 -/
 
-def add (n1 n2 : Nat) :=
+def add (a b : Nat) :=
   Nat.rec (motive := fun _ => Nat)
-    (zero := n2)
-    (succ := fun _n1' add_n1' => Nat.succ add_n1')
-    n1
+    (zero := b)
+    (succ := fun _a' add_a'_b => Nat.succ add_a'_b)
+    a
 
 /-
 And it works!

@@ -39,10 +39,10 @@ run_elab
 Soundness
 ---------
 
-Why it is so important that the Lean kernel does not just accept
-recursive definitions like other programming languages?
+Why is it so important that the Lean kernel does not simply
+accept recursive definitions like other programming languages?
 
-Because it would immediatelly break the soundness of the logic;
+Because it would immediately break the soundness of the logic;
 we could prove any propositon this way:
 ```
 def reallyBad {P : Prop} : P := reallyBad

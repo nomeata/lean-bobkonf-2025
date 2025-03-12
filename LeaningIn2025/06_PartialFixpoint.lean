@@ -28,7 +28,9 @@ Rules for `partial_fixpoint` (simplified):
 * The function is constructed using monadic operations
   (bind, `do`-notation)
 
-This defines the function and prove the equation.
+In these cases, Lean can defined the function and prove the
+equation without further help.
+
 The user can later, if they want, prove that the function
 is total (i.e. never `none`)
 

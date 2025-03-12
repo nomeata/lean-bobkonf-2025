@@ -23,7 +23,7 @@ Course-of-value recursion
 
 In fact, Lean uses a more powerful translation called
 *course-of-value recursion* that allows recursive
-calls on deeper subexpression.
+calls on (non-immediate) subexpression of the parameter:
 
 Classic example:
 -/
@@ -35,6 +35,9 @@ def fib (a : Nat) : Nat :=
   | Nat.succ (Nat.succ n') =>
     fib n' + fib (Nat.succ n')
 
+/-
+Bored and need a challenge? Define `fib` using `Nat.rec`!
+-/
 
 /-
 Mutual recursion

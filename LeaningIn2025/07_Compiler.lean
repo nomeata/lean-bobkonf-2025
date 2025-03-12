@@ -13,7 +13,6 @@ to native code. The compiler is used when
 * using `#eval` to evalute expressions
 * using `by native_decide` in proofs.
 
-
 The compiler supports recursion, and sees the definitions
 before the structural/well-founded/partial fixpoint machinery
 kicks in. To the compiler, the following are identical:
@@ -22,7 +21,7 @@ kicks in. To the compiler, the following are identical:
 def add₁ : (a b : Nat) → Option Nat
 | .zero, b => b
 | .succ a', b => Nat.succ <$> add₁ a' b
-termination_by structural a => a
+termination_by structural a => a -- explicitly use structural recursion
 
 def add₂ : (a b : Nat) → Option Nat
 | .zero, b => b
@@ -38,18 +37,18 @@ partial_fixpoint
 Ignoring the kernel
 -------------------
 
-There are two variants useful when one does not plan to proof
-things about the defintion anyways.
+There are two more variants that are useful when one does not
+plan to proof things about the defintion anyways.
 
 `partial`
 ---------
 
 * Function may use unrestricted recursion
 * Definition exists in the kernel, but completely opaque
-* Type has to be inhabited
+* The type has to be provably inhabited a-priori
 * `partial` *is not* infectous
 
-Often used in programs (Lean itself is full of it)
+Often used in “normal” programs (The Lean code is full of it)
 -/
 
 partial def add₄ : (a b : Nat) → Option Nat

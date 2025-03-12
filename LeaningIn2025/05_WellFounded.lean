@@ -5,8 +5,8 @@ Well-founded recursion
 You might want to define recursive functions
 that are not structurally recursive.
 
-Consider the following function to check if all elements in an `Array`
-are the same:
+Consider the following function to check if
+all elements in an `Array` are the same:
 -/
 
 def areAllSame (arr : Array Nat) (i : Nat) :=
@@ -25,7 +25,8 @@ decreasing_by
 It is not structural recursive (`i` gets larger as we go).
 
 But there exists a *decreasing measure*:
-The expression `arr.size - i` gets smaller in recursive calls.
+The expression `arr.size - i` gets smaller in the recursive call.
+We specify the measure in the `termination_by` clause.
 
 For this to go through, we have prove to Lean that the measure is decreasing,
 this happens in the `decreasing_by` clause.
@@ -35,8 +36,8 @@ this happens in the `decreasing_by` clause.
 Automatic recursion proofs
 --------------------------
 
-In many cases, Lean will automatically infer the termination proof
-and/or the termination measure.
+In many cases, Lean will automatically infer the termination measure
+and/or the termination proof.
 -/
 
 def areAllSame' (arr : Array Nat) (i : Nat) :=
@@ -72,7 +73,7 @@ Downsides of well-founded recursion
 ---------------------------------
 
 Well-founded recursion is (mostly) strictly more powerful than
-structural recursion. Then why use structural recursion?
+structural recursion. So why ever use structural recursion?
 
 1. No explicit proof needed
 
