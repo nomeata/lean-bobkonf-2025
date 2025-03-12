@@ -46,7 +46,7 @@ plan to proof things about the defintion anyways.
 * Function may use unrestricted recursion
 * Definition exists in the kernel, but completely opaque
 * The type has to be provably inhabited a-priori
-* `partial` *is not* infectous
+* `partial` *is not* infectious
 
 Often used in “normal” programs (The Lean code is full of it)
 -/
@@ -62,7 +62,8 @@ partial def add₄ : (a b : Nat) → Option Nat
 * Function may use unrestricted recursion
 * Other `unsafe` features are available
 * Definition not visible in the kernel
-* `unsafe` *is* infectous
+* `unsafe` *is* infectious
+  (but not when using `implemented_by`).
 -/
 
 unsafe def add₅ : (a b : Nat) → Option Nat

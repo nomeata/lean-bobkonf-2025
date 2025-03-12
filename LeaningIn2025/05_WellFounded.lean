@@ -66,7 +66,7 @@ def ackermann : (a b : Nat) → Nat
   | 0, b => b + 1
   | a + 1, 0 => ackermann a 1
   | a + 1, b + 1 => ackermann a (ackermann (a + 1) b)
-termination_by?
+-- termination_by?
 
 /-
 Downsides of well-founded recursion

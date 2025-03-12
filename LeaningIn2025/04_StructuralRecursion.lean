@@ -28,8 +28,8 @@ calls on (non-immediate) subexpression of the parameter:
 Classic example:
 -/
 
-def fib (a : Nat) : Nat :=
-  match a with
+def fib (n : Nat) : Nat :=
+  match n with
   | 0 => 0
   | 1 => 1
   | Nat.succ (Nat.succ n') =>

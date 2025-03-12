@@ -8,7 +8,7 @@ definition mechanisms: `partial_fixpoint`.
 No termination proof needed!
 This allows non-terminating function specifications!
 
-Mostly useful when verifying sofware or algorithms.
+Mostly useful when verifying software or algorithms.
 -/
 
 /-
@@ -28,11 +28,11 @@ Rules for `partial_fixpoint` (simplified):
 * The function is constructed using monadic operations
   (bind, `do`-notation)
 
-In these cases, Lean can defined the function and prove the
+In these cases, Lean can define the function and prove the
 equation without further help.
 
 The user can later, if they want, prove that the function
-is total (i.e. never `none`)
+is total (i.e. never returns `Option.none`).
 
 More on this example on Zulip:
 https://leanprover.zulipchat.com/#narrow/channel/270676-lean4/topic/McCarthy.2091.20function.20using.20partial_fixpoint
