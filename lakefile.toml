@@ -1,7 +1,7 @@
-name = "leaning-in-2025"
+name = "bobkonf-2025"
 version = "0.1.0"
-defaultTargets = ["LeaningIn2025"]
+defaultTargets = ["BobKonf2025"]
 
 [[lean_lib]]
-name = "LeaningIn2025"
-globs = "LeaningIn2025.+"
+name = "BobKonf2025"
+globs = "BobKonf2025.+"
