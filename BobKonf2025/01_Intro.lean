@@ -3,7 +3,7 @@
 Recursive definitions
 =====================
 Joachim Breitner, Lean FRO
-Leaning In 2025, March 13, Berlin
+BobKonf 2025, March 14, Berlin
 
 
 Agenda
