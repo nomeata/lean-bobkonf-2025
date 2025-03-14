@@ -1,5 +1,5 @@
 # Recursive Definition in Lean
 
 This repo contains the material presented by
-Joachim Breitner at the [“Leaning in 2025”](https://leaning.in/)
-workshop in Berlin.
+Joachim Breitner at [“BobKonf 2025”](https://bobkonf.de/2025/de/program.html)
+in Berlin.
