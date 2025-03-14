@@ -9,6 +9,7 @@ BobKonf 2025, March 14, Berlin
 Agenda
 ------
 
+* What is Lean?
 * Lean has no recursive definitions!
 * Primitive recursion the hard way
 * Structural recursion
