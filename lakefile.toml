@@ -1,7 +1,12 @@
-name = "bobkonf-2025"
+name = "hacs-2025"
 version = "0.1.0"
-defaultTargets = ["BobKonf2025"]
+defaultTargets = ["HACS2025"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "a23bfc6ae1a0dd907682fb769fab584084960473"
 
 [[lean_lib]]
-name = "BobKonf2025"
-globs = "BobKonf2025.+"
+name = "HACS2025"
+globs = "HACS2025.+"
